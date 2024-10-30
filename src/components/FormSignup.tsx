@@ -1,24 +1,22 @@
-import {FormEvent, useContext, useEffect, useState } from "react";
+
+import {FormEvent,useEffect, useState } from "react";
 import { Container, InputLabel, LabelForm, Paragraph, SecondParagraph } from "../styles/FormStyle";
 import { ButtonMotion } from "./ButtonMotion";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { PasswordStrength } from "./PasswordStrenth";
-import { ContextAuth } from "../context/AuthProvider";
 
-export const FormComponent = () => {
+export const FormSignupComponent = () => {
+
+    const [firstName,setFirstName] = useState<string>("");
+    const [lastName, setLastName] = useState<string>("");
     const [email, setEmmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 
-    const {handleLogin, token} = useContext(ContextAuth);
-    
     const formSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        handleLogin(email,password);
+        
     };
-
-    console.log(token);
-    
 
     useEffect(() => {
         AOS.init();

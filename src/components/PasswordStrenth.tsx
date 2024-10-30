@@ -4,11 +4,12 @@ import { InputLabel } from "../styles/FormStyle";
 interface PasswordStrengthProps {
     placeholder: string;
     onChange: (password: string) => void;
+    value:string;
 }
 
 const strengthLabels = ["fraca", "media", "forte"];
 
-export const PasswordStrength = ({ onChange, placeholder }: PasswordStrengthProps) => {
+export const PasswordStrength = ({ onChange, placeholder, value }: PasswordStrengthProps) => {
     const [strength, setStrength] = useState<string>("");
 
     const getStrength = (password: string) => {
@@ -39,6 +40,7 @@ export const PasswordStrength = ({ onChange, placeholder }: PasswordStrengthProp
                 type="password"
                 placeholder={placeholder}
                 onChange={handleChange}
+                value={value}
             />
             <div className={`bars ${strength}`}>
                 <div style={{

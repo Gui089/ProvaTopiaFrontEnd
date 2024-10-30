@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import { LoginPage } from "./page/LoginPage";
+import { AuthProvider } from "./context/AuthProvider";
 
 function App() {
 
@@ -18,9 +19,9 @@ function App() {
   )
 
   return (
-    <>
+    <AuthProvider>
       <RouterProvider router={router}/>
-    </>
+    </AuthProvider>
   )
 }
 

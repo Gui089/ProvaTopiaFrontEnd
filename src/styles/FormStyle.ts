@@ -11,6 +11,16 @@ export const Container = styled.form`
 export const LabelForm = styled.label`
    color: #A8A8A8;
    font-weight: 200;
+
+   @media(min-width: 300px) {
+      width: 250px;
+      align-self: start;
+   }
+
+   @media(min-width: 390px) {
+      align-self: start;
+   }
+
 `;
 
 export const InputLabel = styled.input`
@@ -21,6 +31,20 @@ export const InputLabel = styled.input`
    border-color: white;
    padding: 15px;
    margin-top: 15px;
+
+   @media(min-width: 300px) {
+      width: 250px;
+      align-self: center;
+   }
+
+   @media(min-width: 390px) {
+      width: 300px;
+      align-self: center;
+   }
+
+   @media(min-width: 750px) {
+      width: 400px;
+   }
 `;
 
 export const Paragraph = styled.p`
