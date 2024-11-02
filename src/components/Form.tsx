@@ -5,18 +5,24 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { PasswordStrength } from "./PasswordStrenth";
 import { ContextAuth } from "../context/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 export const FormComponent = () => {
     const [email, setEmmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+    const navigate = useNavigate();
 
     const {handleLogin, token} = useContext(ContextAuth);
     
     const formSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         handleLogin(email,password);
+        navigate("/home");
     };
 
+    const handleClickSignUp = () => {
+        navigate("/auth");   
+    }
     console.log(token);
     
 
@@ -46,7 +52,7 @@ export const FormComponent = () => {
                 <Paragraph>
                     Não possui uma conta ?
                 </Paragraph>
-                <SecondParagraph>Cadastrar</SecondParagraph>
+                <SecondParagraph onClick={handleClickSignUp}>Cadastrar</SecondParagraph>
             </div>
         </Container>
     );
