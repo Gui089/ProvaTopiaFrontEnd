@@ -1,9 +1,14 @@
 import { useLocation } from "react-router-dom";
-import { ButtonLogout, Conatiner, FooterSideBar, HeaderSideBar, ImageUser, ItemMenu, ListMenu, NameItem, SubTitle, TitleHeader } from "../styles/SideBarStyle";
-
+import { ButtonLogout, ButtonToggleSideBar, Conatiner, FooterSideBar, HeaderSideBar, ImageUser, ItemMenu, ListMenu, NameItem, SubTitle, TitleHeader } from "../styles/SideBarStyle";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 
 export const SideBarComponent = () => {
+    useEffect(() => {
+        AOS.init();
+    },[]);
 
     const listMenu = [
         { id: 1, name: "Início", icon: "/img/Home.png", path: "/home" },
@@ -17,7 +22,9 @@ export const SideBarComponent = () => {
     const { pathname } = location;
 
     return (
-        <Conatiner>
+        <Conatiner data-aos="fade-up">
+
+            <ButtonToggleSideBar>{"<"}</ButtonToggleSideBar>
             <HeaderSideBar>
                 <img 
                     src="/img/provatopialogo.png" 
@@ -37,7 +44,7 @@ export const SideBarComponent = () => {
                 <ImageUser />
             </HeaderSideBar>
 
-            <ListMenu>
+            <ListMenu data-aos="fade-up">
                 {listMenu.map(item => (
                     <ItemMenu
                         isActive={pathname === item.path}

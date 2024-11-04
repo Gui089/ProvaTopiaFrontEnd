@@ -9,9 +9,31 @@ export const Conatiner = styled.div`
    height: 80%;
    display: flex;
    flex-direction: column;
-   border:1px solid white;
+   border: 1px solid white;
    border-radius: 20px;
    margin: 30px;
+   position: relative; 
+
+   @media(min-width: 390px) {
+     width: 55%;
+     height: 780px;
+   }
+
+   @media(min-width: 768px) {
+     width: 35%;
+     height: 1100px;
+   }
+   @media(min-width: 1024px) {
+     width: 28%;
+   }
+
+  @media(min-width: 1440px) {
+     width: 20%;
+  }
+
+  @media(min-width: 1550px) {
+    height: 90%;
+  }
 `;
 
 export const ListMenu = styled.ul`
@@ -69,19 +91,56 @@ export const ImageUser = styled.div`
   height: 60px;
   border-radius: 100%;
   background-color: gray;
+
+  @media(min-width: 390px) {
+     display: none;
+  }
+
+  @media(min-width: 768px) {
+     display: flex;
+  }
 `;
 
 export const FooterSideBar = styled.div`
   display: flex;
-  margin-top: 110%;
+  margin-top: 95%;
   margin-left: 10px;
   padding: 20px;
   cursor: pointer;
   align-items: center;
+
+  @media(min-width: 820px) {
+    margin-top: 160%;
+  }
+  
+  @media(min-width: 1024px) {
+    margin-top: 190%;
+  }
+
+  @media(min-width: 1440px) {
+    margin-top: 190%;
+  }
+
+  @media(min-width: 1550px) {
+    margin-top: 90%;
+  }
 `;
 
 export const ButtonLogout = styled.h4`
   color: #CC8889;
   font-weight: 200;
   margin-left: 10px;
+`;
+
+export const ButtonToggleSideBar = styled.button`
+  background-color: #161A23;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  position: absolute;
+  right: -14px; 
+  top: 100px;
+  border: 0.5px solid #2D2F39;
+  cursor: pointer;
 `;

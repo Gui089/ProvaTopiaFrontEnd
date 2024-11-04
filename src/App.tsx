@@ -5,10 +5,10 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
-import { LoginPage } from "./page/LoginPage";
+import { LoginPage } from "./pages/LoginPage";
 import { AuthProvider } from "./context/AuthProvider";
-import { SignUpPage } from "./page/SignUpPage";
-import { HomePage } from "./page/HomePage";
+import { SignUpPage } from "./pages/SignUpPage";
+import { HomePage } from "./pages/HomePage";
 
 function App() {
 
