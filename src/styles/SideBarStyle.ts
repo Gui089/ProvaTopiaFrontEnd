@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface ItemMenuProps {
-    isActive: boolean;
+    $isActive?: boolean;
 }
 
 export const Conatiner = styled.div`
@@ -52,7 +52,7 @@ export const ItemMenu = styled.li<ItemMenuProps>`
   cursor: pointer;
   transition: 0.2s;
   padding: 10px;
-  background-color: ${({ isActive }) => (isActive ? '#2D2F39' : 'transparent')};
+  background-color: ${({ $isActive }) => ($isActive ? '#2D2F39' : 'transparent')};
   
   &:hover {
     background-color: #2D2F39;
@@ -81,9 +81,10 @@ export const TitleHeader = styled.h4`
   font-weight: 200;
 `;
 
-export const SubTitle = styled.h4`
+export const SubTitle = styled.p`
   color: #B5B5B5;
-  font-weight: 200;
+  font-weight: 100;
+  font-size: 14px;
 `;
 
 export const ImageUser = styled.div`

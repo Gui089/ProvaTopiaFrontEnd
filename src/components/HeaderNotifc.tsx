@@ -1,9 +1,17 @@
 import { HeaderContainer, TitlePage } from "../styles/HeaderNotific"
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 
 export const HeaderNotifcComponent = () => {
+
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
-        <HeaderContainer>
+        <HeaderContainer data-aos="fade-up">
             <TitlePage>
                 Início
             </TitlePage>

@@ -4,8 +4,12 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 
+interface SideBarProps {
+    user:string;
+    email:string;
+}
 
-export const SideBarComponent = () => {
+export const SideBarComponent = ({user, email}:SideBarProps) => {
     useEffect(() => {
         AOS.init();
     },[]);
@@ -33,11 +37,11 @@ export const SideBarComponent = () => {
                  
                 <div style={{display:'flex', flexDirection:'column',}}>
                    <TitleHeader>
-                      Usuario
+                      {user}
                 </TitleHeader>
 
                 <SubTitle>
-                    EmailSubUser
+                    {email}
                 </SubTitle>
                 </div>
 
@@ -47,7 +51,7 @@ export const SideBarComponent = () => {
             <ListMenu data-aos="fade-up">
                 {listMenu.map(item => (
                     <ItemMenu
-                        isActive={pathname === item.path}
+                        $isActive={pathname === item.path}
                         key={item.id}>
                         <img src={item.icon}/>
                         <NameItem>{item.name}</NameItem>
